@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadMeals | Rishit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo">Rishit Malpani Home<span></span></a>
+        <ul class="nav-links">
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#work" class="active">Work</a></li>
+            <li><a href="../index.html#blog">Blog</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="project-hero">
+        <div class="project-hero-content">
+            <div class="project-hero-text">
+                <div class="breadcrumb">
+                    <a href="../index.html#work">Work</a>
+                    <span>/</span>
+                    <span>MadMeals</span>
+                </div>
+                <span class="project-label">AI Web Application</span>
+                <h1 class="project-hero-title">MadMeals</h1>
+                <p class="project-hero-description">
+                    An intelligent dining optimization engine for UW-Madison students that leverages Large Language Models (LLMs) to analyze real-time menus and generate nutritionally precise daily meal plans.
+                </p>
+                <div class="project-links">
+                    <a href="https://madmeals-app-1032514960550.us-central1.run.app" class="btn">Live Demo</a>
+                    <!-- <a href="#" class="btn btn-ghost">View on GitHub →</a> -->
+                </div>
+            </div>
+            <div class="project-hero-media">
+                <div class="project-hero-image">
+                    <img src="../images/madmeals.jpeg" alt="Madmeals picture">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="project-details">
+        <aside class="project-sidebar">
+            <div class="project-info-block">
+                <span class="project-info-label">Role</span>
+                <p class="project-info-value">Full Stack Engineer</p>
+            </div>
+            <div class="project-info-block">
+                <span class="project-info-label">Timeline</span>
+                <p class="project-info-value">Fall 2025</p>
+            </div>
+            <div class="project-info-block">
+                <span class="project-info-label">Team</span>
+                <p class="project-info-value">Rishit Malpani (project lead), Partson Yang, Iris Xu</p>
+            </div>
+            <div class="project-info-block">
+                <span class="project-info-label">Tech Stack</span>
+                <p class="project-info-value">Python, Quart (Async), Flask, LangChain, Google Gemini, Pydantic</p>
+            </div>
+        </aside>
+
+        <div class="project-main-content">
+            <h2>Overview</h2>
+            <p>
+                MadMeals addresses the complexity of navigating campus dining by treating meal planning as a data optimization problem. Students often struggle to piece together meals that meet specific protein or calorie goals across widely dispersed dining locations. This platform transforms that experience by using Generative AI to "reason" through daily options.
+            </p>
+            <p>
+                The system aggregates real-time data from the Nutrislice API, parses unstructured nutritional information, and uses Google's Gemini models to construct cohesive full-day eating strategies that strictly adhere to user-defined goals.
+            </p>
+
+            <h2>The Problem</h2>
+            <p>
+                UW-Madison operates multiple dining markets, each serving hundreds of items daily. For students with specific fitness goals or strict dietary needs, manually checking menus for macro-nutrient content is tedious and error-prone. One could spend 30+ minutes daily manually checking menus, considering their goals, and deciding what to eat and where.
+            </p>
+            <p>
+                Another issue is that of imperfect knowledge. One may not be fully aware of nutrtional value of things and may inadvertently eat food against their goals or needs. They may inadvertently consume allergic or religiously-restricted ingredients. 
+            </p>
+
+            <h2>Technical Approach</h2>
+            <p>
+                I engineered the backend in Python, creating two distinct implementations to test performance scaling: a synchronous version using <strong>Flask</strong> with thread pooling, and a high-concurrency asynchronous version using <strong>Quart</strong> and <strong>aiohttp</strong>.
+            </p>
+            <p>
+                The core logic utilizes <strong>LangChain</strong> to orchestrate a RAG (Retrieval-Augmented Generation) pipeline. The system scrapes and cleans raw JSON from 18+ API endpoints, filters items based on data quality, and injects this context into a structured LLM prompt. Output validation is handled by <strong>Pydantic</strong>, ensuring the AI returns strictly typed JSON data rather than unstructured text.
+            </p>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Generative AI Planning:</strong> Uses Gemini-2.5-flash to build cohesive daily plans rather than just listing food items.</li>
+                <li><strong>Macro-Nutrient Optimization:</strong> Specifically targets user-defined calorie and protein goals using LLM reasoning.</li>
+                <li><strong>Real-time Data Aggregation:</strong> Live scraping of 6+ dining halls across all meal periods via Nutrislice.</li>
+                <li><strong>Strict Output Validation:</strong> Pydantic models ensure every recommendation maps to real, valid menu items.</li>
+                <li><strong>High-Concurrency Architecture:</strong> Async I/O handles multiple data streams without blocking the main event loop.</li>
+                <li><strong>Intelligent Caching:</strong> Custom thread-safe and async-safe caching layers minimize upstream API latency.</li>
+            </ul>
+
+            <div class="project-gallery">
+                <div class="project-gallery-item">
+                    <img src="../images/madmeals.jpeg" alt="Madmeals picture">
+                </div>
+                <div class="project-gallery-item">
+                    <img src="../images/madmeals-search.png" alt="Madmeals picture">
+                </div>
+                <div class="project-gallery-item">
+                    <img src="../images/madmeals-result.png" alt="Madmeals picture">
+                </div>
+                <div class="project-gallery-item">
+                    <img src="../images/madmeals-tips.png" alt="Madmeals picture">
+                </div>
+            </div>
+
+            <h2>The Logic Engine</h2>
+            <p>
+                Instead of traditional collaborative filtering, I implemented a deterministic AI pipeline. The system first aggregates menu data, physically isolating it by meal period (Breakfast, Lunch, Dinner) to prevent context contamination. This clean data is injected into a prompt template that instructs the LLM to act as a nutritionist.
+            </p>
+            <p>
+                The model then selects the single best dining hall for each meal period to maximize nutritional efficiency. I used structured output parsers to force the LLM to return data that fits my schema, guaranteeing the frontend always receives valid, renderable JSON.
+            </p>
+
+            <h2>Challenges & Solutions</h2>
+            <p>
+                <strong>Latency & I/O Blocking:</strong> Fetching data from 18 distinct API endpoints sequentially was too slow for a user-facing app. I engineered an asynchronous solution using Quart, allowing all data fetching to happen in parallel, reducing scrape times by over 70%.
+            </p>
+            <p>
+                <strong>LLM Hallucinations:</strong> Early versions of the AI would occasionally recommend dinner items for breakfast. I solved this by implementing a rigid structure that segregates context in the prompt, combined with prompt engineering rules that strictly forbid cross-meal selection.
+            </p>
+            <p>
+                <strong>Unstructured Source Data:</strong> The upstream API provided inconsistent JSON structures with nutritional info often buried in text strings. I wrote robust parsers with Regex lookups to extract accurate macronutrients (protein, calories etc.) from messy descriptions.
+            </p>
+
+            <h2>Results & Impact</h2>
+            <p>
+                Reduced the time for meal planning from up to 30+ minuties to under 30 seconds.
+            </p>
+
+            <h2>What I Learned</h2>
+            <p>
+                Building MadMeals deepened my expertise in building production-ready AI applications. I learned the importance of structured outputs when working with LLMs, the massive performance benefits of asynchronous programming for I/O-bound tasks, and how to design robust caching strategies to protect upstream APIs from rate limits.
+            </p>
+        </div>
+    </section>
+
+    <section class="related-projects">
+        <h2>Other Projects</h2>
+        <div class="related-projects-grid">
+            <a href="pothole-detector.html" class="project-card">
+                <span class="project-label">Mobile Application</span>
+                <h3 class="project-title">Pothole Detector</h3>
+                <p class="project-description">
+                    Real-time pothole detection using computer vision and deep learning to help drivers avoid road hazards and automate hazard report generation for road maintenance.
+                </p>
+                <span class="project-link">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </span>
+            </a>
+            <!-- <a href="#" class="project-card">
+                <span class="project-label">Category</span>
+                <h3 class="project-title">Another Project</h3>
+                <p class="project-description">
+                    Brief description of another project to help visitors explore more of your work.
+                </p>
+                <span class="project-link">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </span>
+            </a> -->
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-text">© 2025 Rishit. Built with care.</p>
+    </footer>
+</body>
+</html>

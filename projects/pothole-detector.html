@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Fortify | Rishit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo">Rishit Malpani Home<span></span></a>
+        <ul class="nav-links">
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#work" class="active">Work</a></li>
+            <li><a href="../index.html#blog">Blog</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="project-hero">
+        <div class="project-hero-content">
+            <div class="project-hero-text">
+                <div class="breadcrumb">
+                    <a href="../index.html#work">Work</a>
+                    <span>/</span>
+                    <span>Road Fortify</span>
+                </div>
+                <span class="project-label">iOS App and PostgreSQL backend</span>
+                <h1 class="project-hero-title">Road Fortify</h1>
+                <p class="project-hero-description">
+                    A native iOS safety utility delivering real-time road hazard detection via on-device machine learning. Road Fortify combines low-latency computer vision with fault-tolerant geospatial telemetry to automate infrastructure maintenance reporting.
+                </p>
+                <div class="project-links">
+                    <!-- <a href="#" class="btn">View on GitHub</a>
+                    <a href="#" class="btn btn-ghost">Download App →</a> -->
+                </div>
+            </div>
+            <div class="project-hero-media">
+                <div class="iphone-mockup">
+                    <div class="iphone-screen">
+                        <img src="../images/pothole.jpeg" alt="Road Fortify App">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="project-details">
+        <aside class="project-sidebar">
+            <div class="project-info-block">
+                <span class="project-info-label">Role</span>
+                <p class="project-info-value">Full Stack Engineer</p>
+            </div>
+            <div class="project-info-block">
+                <span class="project-info-label">Timeline</span>
+                <p class="project-info-value">2023-Present</p>
+            </div>
+            <div class="project-info-block">
+                <span class="project-info-label">Team</span>
+                <p class="project-info-value">Solo Project</p>
+            </div>
+            <div class="project-info-block">
+                <span class="project-info-label">Tech Stack</span>
+                <p class="project-info-value">Swift, SwiftUI, CoreML (YOLOv8), Python, PostgreSQL, AVFoundation, CoreLocation </p>
+            </div>
+            <!-- <div class="project-info-block">
+                <span class="project-info-label">Links</span>
+                <p class="project-info-value">
+                    <a href="#">GitHub</a> · <a href="#">App Store</a>
+                </p>
+            </div> -->
+        </aside>
+
+        <div class="project-main-content">
+            <h2>Overview</h2>
+            <p>
+                Road Fortify is designed to bridge the gap between driver safety and infrastructure maintenance. While traditional reporting methods are reactive and manual, this application leverages the driver's smartphone to proactively identify hazards like potholes, debris, and animals in real-time.
+            </p>
+            <p>
+                By processing video feeds directly on the device, the system ensures zero-latency alerts for the driver while asynchronously synchronizing structured, geotagged hazard data to a central PostgreSQL database for municipal analytics.
+            </p>
+
+            <h2>The Problem</h2>
+            <p>
+                Road maintenance is often delayed due to a lack of timely data, leading to vehicle damage and safety risks. Manual reporting is cumbersome for drivers, and cloud-based detection solutions suffer from latency and connectivity issues in remote areas. A solution was needed that could operate independently of network status while generating high-fidelity data for road authorities.
+            </p>
+
+            <h2>Technical Approach</h2>
+            <p>
+                The application is built entirely in Swift, utilizing a custom YOLOv8 model optimized for the Apple Neural Engine via CoreML. This allows for high-performance object detection at high FPS without draining battery life. The architecture implements a fault-tolerant queueing system—caching reports locally when offline and batch-syncing them when connectivity is restored.
+            </p>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Edge AI Inference:</strong> Runs custom YOLOv8 detection locally on-device for immediate hazard recognition.</li>
+                <li><strong>Dynamic Visual Overlay:</strong> Renders bounding boxes and confidence intervals directly onto the camera preview using SwiftUI Canvas.</li>
+                <li><strong>Fault-Tolerant Syncing:</strong> Automatically queues reports during network outages and synchronizes with PostgreSQL when back online.</li>
+                <li><strong>Precision Telemetry:</strong> Combines CoreLocation data with detection events to tag hazards with high-accuracy coordinates.</li>
+                <li><strong>Resource Efficiency:</strong> Manages AVFoundation sessions and pixel buffers to minimize thermal impact during continuous usage.</li>
+                <li><strong>Comprehensive Dashboard:</strong> detailed views for pending reports and system diagnostics.</li>
+            </ul>
+
+            <div class="project-gallery">
+                <div class="project-gallery-item">
+                    <img src="../images/pothole.jpeg" alt="Road Fortify App">
+                </div>
+                <div class="project-gallery-item">
+                    <img src="../images/rf-reports.jpeg" alt="Road Fortify App">
+                </div>
+                <div class="project-gallery-item full-width">
+                    <img src="../images/rf-arch.png" alt="Road Fortify App">
+                </div>
+            </div>
+
+            <h2>Challenges & Solutions</h2>
+            <p>
+                <strong>Robust Model Training:</strong> Distinguishing actual road hazards from harmless surface irregularities (like shadows or manhole covers) required a highly generalized model. I utilized a rigorous data augmentation pipeline to simulate diverse lighting and road conditions, ensuring the model remained accurate in real-world driving scenarios.
+            </p>
+            <p>
+                <strong>Mobile Optimization:</strong> Running continuous object detection on a phone poses significant thermal and battery challenges. To solve this, I deployed a custom YOLOv8 model optimized for the Apple Neural Engine via CoreML instead of the Yolo v12 model I was originally using. This approach allowed for high-performance inference directly on the edge while minimizing power consumption.
+            </p>
+
+            <h2>Results & Impact</h2>
+            <p>
+                Road Fortify successfully demonstrates that consumer hardware can perform enterprise-grade infrastructure monitoring. The app achieves reliable detection of road surface irregularities in varying lighting conditions, providing a scalable model for crowdsourced smart city maintenance.
+            </p>
+
+            <h2>What I Learned</h2>
+            <p>
+                Building Road Fortify deepened my expertise in the intersection of mobile development and machine learning. I gained significant experience with the CoreML workflow, building capable computer vision models, Swift development, and designing offline-first architectures that remain reliable in the field.
+            </p>
+        </div>
+    </section>
+
+    <section class="related-projects">
+        <h2>Other Projects</h2>
+        <div class="related-projects-grid">
+            <a href="madmeals.html" class="project-card">
+                <span class="project-label">Web Application</span>
+                <h3 class="project-title">MadMeals</h3>
+                <p class="project-description">
+                    An intelligent dining hall recommendation system for UW-Madison students with personalized meal suggestions.
+                </p>
+                <span class="project-link">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </span>
+            </a>
+            <!-- <a href="#" class="project-card">
+                <span class="project-label">Category</span>
+                <h3 class="project-title">Another Project</h3>
+                <p class="project-description">
+                    Brief description of another project to help visitors explore more of your work.
+                </p>
+                <span class="project-link">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </span>
+            </a> -->
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-text">© 2025 Rishit. Built with care.</p>
+    </footer>
+</body>
+</html>
