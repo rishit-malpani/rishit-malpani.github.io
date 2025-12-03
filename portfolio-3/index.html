@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishit Malpani</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Rishit Malpani<span></span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="section-alt">
+        <div class="section-header">
+            <h2 class="section-title">About</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    <!-- Edit your intro paragraph here - make it compelling! -->
+                    I'm a senior at UW-Madison double majoring in Computer Science and Statistics with a minor in Mathematics. I am passionate about machine learning,
+                    distributed systems, and software development. 
+
+                </p>
+                <p>
+                    <!-- Add more about yourself here -->
+                    I have experience applying ML techniques to interdisciplinary domains, commerical applications, and scientific research. I have worked on numerous projects
+                    that bridge software development and ML integration. I am interested in and closely follow AI research and am pursuing my honors thesis research project
+                    in robust instruction tuning in LLM post-training (seeing some very exciting results, publication on the horizon in a few months!)
+                </p>
+                <p>
+                    <!-- Add another paragraph or delete this one -->
+                    When I am not coding, you can find me reading history, politics, and philosophy. I enjoy reading, writing, lifting weights at the gym, and listening to music.
+                </p>
+                <div class="skills-list">
+                    <!-- Edit your skills here -->
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Hugginface</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Spark</span>
+                    <span class="skill-tag">LangChain</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">Cassandra</span>
+                </div>
+            </div>
+            <div class="about-image">
+                <!-- Replace this with your image: <img src="images/your-photo.jpg" alt="Rishit"> -->
+                <img src="images/profile-pic.jpeg" alt="Rishit Profile">
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-label"> Machine Learning and Software Engineer </p>
+            <h1>Decoding, Encoding, and Building <em>Consciousness</em> and its support systems for real world impact</h1>
+            <p class="hero-description">
+                Computer Science, Statistics, and Mathematics Senior at UW-Madison interested in AI/ML, distributed systems, and software development
+            </p>
+            <div class="hero-cta">
+                <a href="#about" class="btn">About Me</a>
+                <a href="#work" class="btn">View My Work</a>
+                <a href="#contact" class="btn btn-ghost">Get In Touch →</a>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                <!-- Rotating Circle -->
+                <g class="rotating-circle">
+                    <circle cx="150" cy="150" r="85" fill="none" stroke-width="2.5"/>
+                </g>
+
+                <!-- Rotating Triangle (vertices extend outside circle) -->
+                <g class="rotating-triangle">
+                    <polygon points="150,40 240,210 60,210" fill="none" stroke-width="2.5"/>
+                </g>
+
+                <!-- Pulsing balls -->
+                <circle class="pulse-ball ball-1" cx="150" cy="90" r="7"/>
+                <circle class="pulse-ball ball-2" cx="185" cy="150" r="7"/>
+                <circle class="pulse-ball ball-3" cx="115" cy="150" r="7"/>
+                <circle class="pulse-ball ball-4" cx="150" cy="190" r="7"/>
+            </svg>
+        </div>
+    </section>
+
+    <section id="work">
+        <div class="section-header">
+            <h2 class="section-title">Work</h2>
+        </div>
+        
+        <div class="work-nav">
+            <button class="work-nav-item active" data-tab="projects">Projects</button>
+            <button class="work-nav-item" data-tab="research">Research</button>
+            <!-- <button class="work-nav-item" data-tab="experience">Experience</button> -->
+        </div>
+
+        <!-- Projects Tab -->
+        <div class="work-content active" id="projects">
+            <div class="projects-grid">
+                
+                <!-- Pothole Detector - Featured Project with iPhone Mockup -->
+                <div class="project-card featured">
+                    <div class="project-info">
+                        <span class="project-label">iOS Mobile Application</span>
+                        <h3 class="project-title">Road Fortify</h3>
+                        <p class="project-description">
+                            A mobile application for real-time road hazard detection (potholes, debris, animals) powering driver safety and and geotagged hazard report generation for road maintenance 
+                        </p>
+                        <p class="project-description">
+                            Road Fortify is a native iOS application leveraging a custom YOLOv8 model via CoreML to perform real-time, on-device hazard detection without relying on cloud inference. The architecture combines AVFoundation and CoreLocation to generate precise geospatial telemetry, synchronizing structured data to a centralized PostgreSQL database. This stack utilizes a fault-tolerant queueing system to ensure reliable delivery for downstream analytics and road maintenance prioritization, even in intermittent network conditions.
+                        </p>
+                        <div class="project-tech">
+                            <span>YOLO v8</span>
+                            <span>PostgreSQL</span>
+                            <span>Swift</span>
+                            <span>Python</span>
+                            <span>CoreML</span>
+                        </div>
+                        <a href="projects/pothole-detector.html" class="project-link">
+                            View Project
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="iphone-mockup">
+                        <div class="iphone-screen">
+                            <!-- Replace with your app screenshot -->
+                            <!-- <img src="images/pothole-screenshot.png" alt="Pothole Detector App"> -->
+                            <img src="images/pothole.jpeg" alt="Terrasight App">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MadMeals Project -->
+                <div class="project-card featured">
+                    <div class="project-info">
+                        <span class="project-label">Web Application</span>
+                        <h3 class="project-title">MadMeals</h3>
+                        <p class="project-description">
+                            An AI-powered dining hall recommendation system for UW-Madison students. MadMeals analyzes daily menus across campus dining locations and provides personalized meal suggestions based on each student's custom dietary preferences and nutritional goals
+                        </p>
+                        <p class="project-description">
+                            MadMeals is a Python-based dining optimizer that aggregates real-time UW-Madison menu data via the Nutrislice API to generate personalized meal plans using LangChain and Google Gemini. It offers both synchronous (Flask) and asynchronous (Quart) implementations to efficiently handle concurrent user loads through non-blocking I/O and thread pooling. The system utilizes Pydantic for strict structured output validation and implements intelligent in-memory caching to optimize performance and minimize upstream API latency.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>Quart</span>
+                            <span>LangChain</span>
+                            <span>PyDantic</span>
+                            <span>Gemini API</span>
+                            <span>Redis</span>
+                        </div>
+
+                        <a href="projects/madmeals.html" class="project-link">
+                            View Project
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="project-image-container">
+                        <img src="images/madmeals.jpeg" alt="Madmeals picture">
+                    </div>
+                </div>
+
+                <!-- Add More Projects - Template -->
+                <!-- <div class="project-card">
+                    <span class="project-label">Category</span>
+                    <h3 class="project-title">Project Title</h3>
+                    <p class="project-description">
+                        Add your project description here. Explain what the project does, the problem it solves, and any notable features.
+                    </p>
+                    <div class="project-tech">
+                        <span>Tech 1</span>
+                        <span>Tech 2</span>
+                        <span>Tech 3</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        View Project
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div> -->
+
+            </div>
+        </div>
+
+        <!-- Research Tab -->
+        <div class="work-content" id="research">
+            <div class="timeline">
+                
+                <!-- Research Item Template -->
+                <div class="timeline-item">
+                    <span class="timeline-date"> May 2025 - Present</span>
+                    <h3 class="timeline-title">Distributionally Robust Instruction Fine-Tuning (DRIFT) in LLMs</h3>
+                    <p class="timeline-company">Advised by Prof. Jelena Diakonikolas • University of Wisconsin-Madison</p>
+                    <div class="timeline-description">
+                        <p> LLMs suffer from the problem of performance drop when faced with unconventional instruction styles and difficult phrasing.
+                            Conventional supervised fine-tuning in LLM post-training instruciton fine-tuning assigns equal weightage to all instruction styles it faces which can lead to poor
+                            performance on styles that are hard for LLMs to understand and follow. I am investigating the promise of the Distributionally Robust Optimization (DRO) framework
+                            in instruction fine-tuning to dynamically adjust instruction domain weights during the fine-tuning process to make models more robust to difficult instruction styles.
+                            Preliminary analysis suggests that not only does this provids more robustness to models, but better overall performance compared to standard SFT as well.
+                            A full paper with details is expected in the next 2-3 months.
+    
+    
+                        </p>
+                        <ul>
+                            <li>DRO methods in LLM instruction fine-tuning can outperform standard SFT</li>
+                            <li>DRO methods can make LLMs more robust to difficult instruction styles</li>
+                            <li>Experimentations concieved in PyTorch with use of Huggingface tools and executed on UW-Madison's HTCondor distributed and high-performance computing platform</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Add more research items as needed -->
+                <!-- <div class="timeline-item">
+                    <span class="timeline-date">Month Year - Month Year</span>
+                    <h3 class="timeline-title">Another Research Project</h3>
+                    <p class="timeline-company">Lab Name • University</p>
+                    <div class="timeline-description">
+                        <p>Description of this research project and your contributions.</p>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+
+        <!-- Experience Tab -->
+        <!-- <div class="work-content" id="experience">
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <span class="timeline-date">Month Year - Present</span>
+                    <h3 class="timeline-title">Job Title</h3>
+                    <p class="timeline-company">Company Name • Location</p>
+                    <div class="timeline-description">
+                        <p>Brief description of your role and responsibilities.</p>
+                        <ul>
+                            <li>Key achievement or responsibility</li>
+                            <li>Another accomplishment</li>
+                            <li>Technologies used</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div> -->
+    </section>
+
+    <section id="blog" class="section-alt">
+        <div class="section-header">
+            <h2 class="section-title">Blog</h2>
+        </div>
+        <div class="blog-grid">
+            
+      
+            <article class="blog-card">
+                <span class="blog-date">August 4, 2022</span>
+                <h3 class="blog-title"> Machine learning is not statistics, here's why  </h3>
+                <p class="blog-excerpt">
+                    To some, machine learning is just an extension of statistics, to some the distinction is clear. In this blog I share my thoughs by drawing parallel with the distinction setting apart math and physics
+                </p>
+                <a href="https://medium.com/@cool.rishit/machine-learning-is-not-statistics-heres-why-82d90e73053d" target="_blank" class="blog-link">Read on Medium →</a>
+            </article>
+
+
+            <article class="blog-card">
+                <span class="blog-date">Jan 3, 2022</span>
+                <h3 class="blog-title">Why Alan Turing’s 1950 paper is a must read</h3>
+                <p class="blog-excerpt">
+                    Alan Turing’s influential 1950 paper, “Computing Machinery and Intelligence”, is a great resource for philosophical musing on the concepts of ‘intelligence’, ‘machines’, and ‘thinking’. In the following post, I attempt to reason why so.
+                    Originally written before the age of modern LLMs, amusing to look back and witness how the Turing Test once seemed unconquerable!
+                </p>
+                <a href="https://analyticsindiamag.com/ai-features/why-alan-turings-1950-paper-is-so-relevant-today/" target="_blank" class="blog-link">Read →</a>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header">
+            <h2 class="section-title">Contact</h2>
+        </div>
+        <div class="contact-content">
+            <div class="contact-text">
+                <h3>Let's build something together</h3>
+                <p>
+                    I'm currently looking for full-time positions in machine learning, software development, and related fields. Whether you have a question, want to collaborate, or just want to say hi, I'd love to hear from you.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:malpani@wisc.edu" class="contact-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        malpani@wisc.edu
+                    </a>
+                    <!-- <a href="https://github.com/yourusername" class="contact-link" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.8                      GitHub
+                    </a> -->
+                    <a href="https://www.linkedin.com/in/rishit-malpani/" class="contact-link" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+            <form class="contact-form" id="contact-form" action="https://formspree.io/f/xovgwrbb" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn" id="submit-btn">Send Message</button>
+                <div id="form-status" style="display: none; margin-top: 1rem; padding: 1rem; border: 1px solid; border-radius: 4px;"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-text">© 2025 Rishit. Built with care.</p>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        const workNavItems = document.querySelectorAll('.work-nav-item');
+        const workContents = document.querySelectorAll('.work-content');
+
+        workNavItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const tab = item.dataset.tab;
+                
+                workNavItems.forEach(nav => nav.classList.remove('active'));
+                item.classList.add('active');
+                
+                workContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === tab) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.project-card, .blog-card, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Contact form AJAX submission
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const submitBtn = document.getElementById('submit-btn');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formStatus.style.display = 'none';
+
+            // Get form data
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Success
+                    formStatus.style.display = 'block';
+                    formStatus.style.borderColor = 'var(--accent)';
+                    formStatus.style.color = 'var(--accent)';
+                    formStatus.textContent = 'Thanks for reaching out! I\'ll get back to you soon.';
+                    contactForm.reset(); // Clear the form
+                } else {
+                    // Error from server
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Network error or other issue
+                formStatus.style.display = 'block';
+                formStatus.style.borderColor = '#ef4444';
+                formStatus.style.color = '#ef4444';
+                formStatus.textContent = 'Oops! Something went wrong. Please try again or email me directly.';
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        });
+    </script>
+</body>
+</html>

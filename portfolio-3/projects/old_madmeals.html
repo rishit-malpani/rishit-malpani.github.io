@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadMeals | Rishit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo">rishit<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#work" class="active">Work</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="project-hero">
+        <div class="project-hero-content">
+            <div class="project-hero-text">
+                <div class="breadcrumb">
+                    <a href="../index.html#work">Work</a>
+                    <span>/</span>
+                    <span>MadMeals</span>
+                </div>
+                <span class="project-label">Web Application</span>
+                <h1 class="project-hero-title">MadMeals</h1>
+                <p class="project-hero-description">
+                    An intelligent dining hall recommendation system for UW-Madison students that analyzes daily menus and provides personalized meal suggestions based on dietary preferences, nutritional goals, and past dining history.
+                </p>
+                <div class="project-links">
+                    <!-- Update these links -->
+                    <a href="#" class="btn">Live Demo</a>
+                    <a href="#" class="btn btn-ghost">View on GitHub →</a>
+                </div>
+            </div>
+            <div class="project-hero-media">
+                <div class="project-hero-image">
+                    <!-- Replace with your screenshot -->
+                    <!-- <img src="../images/madmeals-hero.png" alt="MadMeals Dashboard"> -->
+                    Project screenshot here
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="project-details">
+        <aside class="project-sidebar">
+            <div class="project-info-block">
+                <span class="project-info-label">Role</span>
+                <p class="project-info-value">Full Stack Developer</p>
+            </div>
+            <div class="project-info-block">
+                <span class="project-info-label">Timeline</span>
+                <p class="project-info-value">Month Year - Month Year</p>
+            </div>
+            <div class="project-info-block">
+                <span class="project-info-label">Team</span>
+                <p class="project-info-value">Solo / X members</p>
+            </div>
+            <div class="project-info-block">
+                <span class="project-info-label">Tech Stack</span>
+                <p class="project-info-value">React, Node.js, PostgreSQL, Python, scikit-learn, BeautifulSoup</p>
+            </div>
+            <div class="project-info-block">
+                <span class="project-info-label">Links</span>
+                <p class="project-info-value">
+                    <a href="#">Live Demo</a> · <a href="#">GitHub</a>
+                </p>
+            </div>
+        </aside>
+
+        <div class="project-main-content">
+            <h2>Overview</h2>
+            <p>
+                MadMeals was born from a common frustration among UW-Madison students: standing in front of a dining hall menu, overwhelmed by choices, and often ending up with the same meals day after day. The platform transforms the dining experience by providing intelligent, personalized recommendations that help students discover new foods they'll love while meeting their nutritional needs.
+            </p>
+            <p>
+                The system scrapes menus daily from all campus dining locations, analyzes nutritional content, and uses machine learning to match students with meals tailored to their preferences and dietary restrictions.
+            </p>
+
+            <h2>The Problem</h2>
+            <p>
+                UW-Madison has multiple dining halls serving different menus each day. Students often struggle to find meals that match their dietary restrictions (vegetarian, vegan, halal, gluten-free), track their nutritional intake, or simply discover new options among the hundreds available daily.
+            </p>
+            <p>
+                Existing solutions were limited to basic menu listings without personalization, nutritional analysis, or intelligent recommendations.
+            </p>
+
+            <h2>Technical Approach</h2>
+            <p>
+                The backend consists of a Node.js API server connected to a PostgreSQL database. A Python service handles daily menu scraping using BeautifulSoup and performs nutritional analysis using the USDA food database. The recommendation engine uses collaborative filtering combined with content-based filtering to suggest meals.
+            </p>
+            <p>
+                The React frontend provides a responsive, intuitive interface where students can set preferences, browse recommendations, and track their dining history.
+            </p>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Smart Recommendations:</strong> ML-powered suggestions based on your taste profile and dining history</li>
+                <li><strong>Dietary Filtering:</strong> Automatically filters for vegetarian, vegan, halal, gluten-free, and allergen-free options</li>
+                <li><strong>Nutritional Tracking:</strong> View calorie counts, macros, and micronutrients for every meal</li>
+                <li><strong>Real-time Menus:</strong> Daily updated menus from all campus dining locations</li>
+                <li><strong>Crowd Predictions:</strong> Estimated wait times and crowd levels based on historical data</li>
+                <li><strong>Meal Planning:</strong> Plan your week's meals in advance and get shopping-list-style summaries</li>
+            </ul>
+
+            <!-- Gallery Section -->
+            <div class="project-gallery">
+                <div class="project-gallery-item">
+                    <!-- <img src="../images/madmeals-1.png" alt="Dashboard view"> -->
+                    Dashboard Screenshot
+                </div>
+                <div class="project-gallery-item">
+                    <!-- <img src="../images/madmeals-2.png" alt="Recommendations view"> -->
+                    Recommendations View
+                </div>
+                <div class="project-gallery-item">
+                    <!-- <img src="../images/madmeals-3.png" alt="Meal detail view"> -->
+                    Meal Detail View
+                </div>
+                <div class="project-gallery-item">
+                    <!-- <img src="../images/madmeals-4.png" alt="Preferences panel"> -->
+                    Preferences Panel
+                </div>
+            </div>
+
+            <h2>Recommendation Algorithm</h2>
+            <p>
+                The recommendation system uses a hybrid approach combining collaborative filtering (finding users with similar tastes) and content-based filtering (matching meal attributes to preferences). New users start with content-based recommendations based on their stated preferences, gradually incorporating collaborative signals as they rate meals.
+            </p>
+            <p>
+                I implemented the algorithm using scikit-learn's matrix factorization for collaborative filtering and TF-IDF vectorization for content similarity. The system retrains weekly to incorporate new user data.
+            </p>
+
+            <h2>Challenges & Solutions</h2>
+            <p>
+                <strong>Data Quality:</strong> Menu data from the university was inconsistent and sometimes incomplete. I built a robust scraping pipeline with fallbacks and implemented fuzzy matching to handle variations in food names.
+            </p>
+            <p>
+                <strong>Cold Start Problem:</strong> New users have no history for the recommendation engine to work with. I addressed this with an onboarding flow that gathers preferences through a quick taste quiz, enabling reasonable recommendations from day one.
+            </p>
+            <p>
+                <strong>Performance:</strong> Computing recommendations for thousands of users with hundreds of daily menu items required optimization. I implemented caching strategies and moved heavy computations to background jobs.
+            </p>
+
+            <h2>Results & Impact</h2>
+            <p>
+                <!-- Add your actual metrics and impact -->
+                Add metrics here - active users, recommendations accuracy, user feedback, etc.
+            </p>
+
+            <h2>What I Learned</h2>
+            <p>
+                Building MadMeals taught me end-to-end product development, from identifying user needs through deployment and iteration. I deepened my understanding of recommendation systems, learned to handle messy real-world data, and gained experience designing intuitive user interfaces for complex functionality.
+            </p>
+        </div>
+    </section>
+
+    <section class="related-projects">
+        <h2>Other Projects</h2>
+        <div class="related-projects-grid">
+            <a href="pothole-detector.html" class="project-card">
+                <span class="project-label">Mobile Application</span>
+                <h3 class="project-title">Pothole Detector</h3>
+                <p class="project-description">
+                    Real-time pothole detection using computer vision and deep learning to help drivers avoid road hazards.
+                </p>
+                <span class="project-link">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </span>
+            </a>
+            <a href="#" class="project-card">
+                <span class="project-label">Category</span>
+                <h3 class="project-title">Another Project</h3>
+                <p class="project-description">
+                    Brief description of another project to help visitors explore more of your work.
+                </p>
+                <span class="project-link">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-text">© 2025 Rishit. Built with care.</p>
+        <div class="footer-links">
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            <a href="mailto:your.email@wisc.edu">Email</a>
+        </div>
+    </footer>
+</body>
+</html>
